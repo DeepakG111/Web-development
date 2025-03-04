@@ -1,0 +1,157 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-image: url('pexels-danielabsi-952670.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    margin: 20px; ;
+}
+
+
+.name h1{
+    color: aliceblue;
+    font-size: 40px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.name h2{
+    margin: 20px;
+    color: beige;
+}
+
+#about{
+    color: aliceblue;
+}
+
+
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 150px;
+    margin-right: 70px;
+    border: 3px solid #e4e2de;
+    object-fit: cover;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+float: right;
+margin-left: 15px ;
+}
+
+
+
+
+
+ul {
+    list-style-type: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: center;
+}
+
+ul a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #ECF0F1;
+    background-color: #2980B9; 
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 5px auto; }
+
+
+ul a:hover {
+    background-color: #3498DB; 
+}
+
+.form1{
+    width: 60%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.contact{
+    border: 2px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: white;
+}
+
+.contact form{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    color: #e4e2de;
+    font-style: italic;
+    padding-right: 20px;
+    margin-left: 30%;
+}
+
+.contact input {
+    padding: 5px;
+    padding-right: 200px;
+    border-radius: 5px;
+}
+
+.contact h1{
+    color: rgb(160, 191, 217);
+}
+.contact select {
+    padding: 20px;
+    border-radius: 6px;
+}
+button {
+    width: 100%;
+    background-color: #F39C12;
+    color: #d4d116;
+    border: none;
+    padding: 1px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #E67E22;
+}
+
+p {
+    color: white; 
+   font-size: 20px;
+}
+
+*{
+    text-decoration: none;
+}
+.navbar{
+  position:relative;  background: rgb(233, 224, 233); font-family: calibri; padding-right: 15px;padding-left: 15px; 
+}
+.navdiv{
+    display: flex; align-items: center; justify-content: space-between;
+}
+.logo a{
+    font-size: 35px; font-weight: 600; color: rgb(10, 8, 8);
+}
+li{
+    list-style: none; display: inline-block;
+}
+li a{
+    color: white; font-size: 18px; font-weight: bold; margin-right: 25px;
+}
+button{
+    background-color: black; margin-left: 10px; border-radius: 10px; padding: 10px; width: 90px;
+}
+button a{
+    color: white; font-weight: bold; font-size: 15px;
+}
