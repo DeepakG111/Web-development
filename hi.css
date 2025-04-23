@@ -1,0 +1,28 @@
+.card-container {
+    display: flex;              /* Row layout by default */
+    justify-content: center;    /* Centers the cards horizontally */
+    gap: 20px;                  /* Space between cards */
+    padding: 20px;
+  }
+  
+  .card1, .card2, .card3 {
+    background-color: aquamarine;
+    border: 1px solid black;
+    padding: 20px;
+    width: 270px;
+    height: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .card1:hover,
+  .card2:hover,
+  .card3:hover {
+    transform: scale(1.05);
+  }
+  .card2{
+    background-color: transparent;
+  }
+  .card3{
+    background-color:o;
+  }

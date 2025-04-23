@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hi.css">
+</head>
+<body>
+    
+<h1 id="title" > hi world</h1>
+<button   onclick="change()">change</button>
+    
+<div class="card-container">
+    <div class="card1">
+      <img src="https://via.placeholder.com/300" alt="Image 1">
+      <h3>Card Title 1</h3>
+      <p>Short description goes here.</p>
+    </div>
+    <div class="card2">
+      <img src="https://via.placeholder.com/300" alt="Image 2">
+      <h3>Card Title 2</h3>
+      <p>Short description goes here.</p>
+    </div>
+    <div class="card3">
+      <img src="https://via.placeholder.com/300" alt="Image 3">
+      <h3>Card Title 3</h3>
+      <p>Short description goes here.</p>
+    </div>
+  </div>
+  
+  <script>
+      var h11 = document.getElementById("title");
+function change(){
+  h11.textContent="bye world"
+}
+
+
+// var para = document.getElementById("title");
+//     console.log(para.textContent);
+//     para.textContent=" bye wolrd";    
+  </script>
+
+</body>
+</html>
