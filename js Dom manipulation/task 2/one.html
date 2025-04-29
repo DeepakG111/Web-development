@@ -1,0 +1,11 @@
+<button onclick="add()">add hello</button>
+ <h1 id="container"> </h1>
+<script>
+    var container =document.getElementById("container")
+
+    function add(){
+        var listitem = document.createElement("h1")
+        listitem.textContent="Hello"
+        container.append(listitem)
+    }
+</script>

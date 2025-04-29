@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List with Local Storage</title>
+    <style>
+        /* Your existing styles remain unchanged */
+        body, ul, li, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #Input {
+            padding: 12px 20px;
+            font-size: 16px;
+            width: 250px;
+            margin-bottom: 15px;
+            border: 2px solid #ff7f7f;
+            border-radius: 25px;
+            outline: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #Input:focus {
+            border-color: #ff4c4c;
+            box-shadow: 0 4px 10px rgba(255, 76, 76, 0.5);
+        }
+
+        button {
+            background-color: #ff4c4c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin-top: 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #ff3333;
+            transform: scale(1.05);
+        }
+
+        #listcontainer {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        #listcontainer li {
+            background-color: #fff;
+            margin: 12px 0;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            color: #333;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #listcontainer li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        #listcontainer li button {
+            background-color: #ff3333;
+            padding: 5px 12px;
+            font-size: 14px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #listcontainer li button:hover {
+            background-color: #cc2a2a;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <input id="Input" placeholder="Enter a new item" />
+        <button onclick="add()">Add</button>
+    </div>
+
+    <ul id="listcontainer"></ul>
+
+    <script>
+        var ul = document.getElementById("listcontainer");
+        var input = document.getElementById("Input");
+
+        // Load saved list from localStorage when the page loads
+        window.onload = function() {
+            loadList();
+        };
+
+        // Add a new item to the list
+        function add() {
+            if (input.value.trim() === "") return; // Prevent empty items
+
+            var listitem = document.createElement("li");
+            listitem.innerHTML = input.value + "<button onclick='deleteitem(event)'>Delete</button>";
+            ul.appendChild(listitem);
+            saveList(); // Save to local storage
+            input.value = "";  // Clear input field
+        }
+
+        // Delete an item from the list
+        function deleteitem(event) {
+            event.target.parentElement.remove();
+            saveList(); // Update local storage after deletion
+        }
+
+        // Save the list to localStorage
+        function saveList() {
+            var items = [];
+            ul.querySelectorAll("li").forEach(function(li) {
+                items.push(li.firstChild.textContent.trim());
+            });
+            localStorage.setItem("listItems", JSON.stringify(items));
+        }
+
+        // Load the list from localStorage
+        function loadList() {
+            var savedItems = JSON.parse(localStorage.getItem("listItems")) || [];
+            savedItems.forEach(function(item) {
+                var listitem = document.createElement("li");
+                listitem.innerHTML = item + "<button onclick='deleteitem(event)'>Delete</button>";
+                ul.appendChild(listitem);
+            });
+        }
+    </script>
+
+</body>
+</html>
