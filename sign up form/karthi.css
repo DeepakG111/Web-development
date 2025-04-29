@@ -1,0 +1,9 @@
+body {
+    background-color: black; /* Change this to any color you prefer */
+    color: white; /* This changes the text color so it's visible */
+    font-family: Arial, sans-serif;
+}
+
+#karthick {
+    border: 2px solid white; 
+}
